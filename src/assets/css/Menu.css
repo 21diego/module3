@@ -1,0 +1,26 @@
+.Menu{
+  position: relative;
+}
+
+.box-contain {
+  height: 2em;
+  background-color: #2e7d32;
+  padding: 0.1em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+p {
+  margin: 0;
+}
+
+#pelotita {
+  width: 2.5em;
+  position: absolute;
+  right: 0;
+  top: -5px;
+}
+
+.fa-bars {
+  color: white;
+}

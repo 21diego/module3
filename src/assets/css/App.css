@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  background-image: url('../img/back_grass.jpg');
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* .gradient{
+  position: absolute;
+  background-image: linear-gradient(180deg, #27F33E 0%, #218710 10%, #27F33E 20%, #218710 30%, #27F33E 40%, #218710 50%,
+                                            #27F33E 60%, #218710 70%, #27F33E 80%, #218710 90%, #27F33E 98%);
+  opacity: 0.55;
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  right: 0;
+} */
