@@ -26,7 +26,7 @@ function Home(){
       <div id="matches">
         {schedule.map((m,i )=> {
           return (
-            <Link to={'/' + m.gameId} key={m.gameId}>
+            <Link to={'/game/' + m.gameId} key={m.gameId}>
               <GameBox match={m} key={i} />
             </Link>
           );

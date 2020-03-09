@@ -16,7 +16,7 @@ function GameDetail(){
       })
     }
     loadMatch();
-  },[])
+  },[refMatch])
   useEffect(() =>{ //Database bringer
     async function loadMaps(){
       await db.ref('stadiums/').once('value')
@@ -28,6 +28,7 @@ function GameDetail(){
     
   },[])
   let srcMap = map.filter(m => m.name === match.location);
+  let source = srcMap[0]? srcMap[0].link:null;
   console.log(srcMap[0]);
   return (
     <div className="Game box">
@@ -39,9 +40,7 @@ function GameDetail(){
       <div className="time">Time: {match.time}</div>
       <div className="location">Stadium: {match.location}</div>
       <div className="location">address: {srcMap[0]? srcMap[0].location:null}</div>
-      <iframe className="map" src={srcMap[0]? srcMap[0].link:null}></iframe>
-
-      
+      <iframe title="myFrame" className="map" src={source}></iframe>
     </div>
   )
 }

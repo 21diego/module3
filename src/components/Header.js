@@ -20,7 +20,7 @@ function Header(props){
     <div className="Header">
       <div className="row d-flex align-items-center">
         <Menu stateUser={user}/>
-        <div className="col-4"><h2>NYSL</h2></div>
+        <div id="title" className="col-4"><h2>NYSL</h2></div>
         {element}
       </div>
       <div className="container box">

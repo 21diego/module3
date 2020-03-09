@@ -1,9 +1,12 @@
 import React from 'react';
 import '../assets/css/Menu.css';
-import {BrowserRouter as Router, Route, Link, Switch, useParams } from 'react-router-dom';
+import  '../assets/css/SlideMenu.css'
+import $ from 'jquery';
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 import Home from './Home';
 import GameDetail from './GameDetail';
+
 
 
 function SlideMenu(){
@@ -11,9 +14,9 @@ function SlideMenu(){
   return (
     <div>
     <Router>
-      <div>
-        <ul>
-          <li>
+      <div id="sidebar" className="active position-fixed">
+        <ul className="list-unstyled components">
+          <li className="active">>
             <Link to="/">Home</Link>
           </li>
           <li>
@@ -23,9 +26,11 @@ function SlideMenu(){
             <Link to="/topics">Topics</Link>
           </li>
         </ul>
-
+      </div>
+      
+      <div>
         <Switch>
-          <Route path="/:id" children={<GameDetail />}>
+          <Route path="/game/:id" children={<GameDetail />}>
           </Route>
           <Route path="/topics">
             
@@ -36,6 +41,7 @@ function SlideMenu(){
         </Switch>
       </div>
     </Router>
+    
     </div>
   )
 }
