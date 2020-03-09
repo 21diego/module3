@@ -1,0 +1,14 @@
+.Game {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.team{
+  color: white;
+}
+
+.time, .location {
+  color: white;
+  font-size: 1em;
+}
