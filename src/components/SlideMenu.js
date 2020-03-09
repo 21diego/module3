@@ -3,6 +3,7 @@ import '../assets/css/Menu.css';
 import {BrowserRouter as Router, Route, Link, Switch, useParams } from 'react-router-dom';
 
 import Home from './Home';
+import GameDetail from './GameDetail';
 
 
 function SlideMenu(){
@@ -24,7 +25,7 @@ function SlideMenu(){
         </ul>
 
         <Switch>
-          <Route path="/:id">
+          <Route path="/:id" children={<GameDetail />}>
           </Route>
           <Route path="/topics">
             
