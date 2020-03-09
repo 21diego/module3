@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import '../assets/css/Home.css';
-import {db} from '../firebase'
+import {db} from '../firebase';
+import { Link } from 'react-router-dom';
 
 // COMPONENTES
-import Header from './Header';
+
 import GameBox from './GameBox';
 
 function Home(){
@@ -20,11 +21,13 @@ function Home(){
     },[])
   return (
     <div>
-      <Header title="Upcoming Events"/>
+      
       <div id="matches">
         {schedule.map((m,i )=> {
           return (
-          <GameBox match={m} key={i} />
+            <Link to={'/' + m.gameId} key={m.gameId}>
+              <GameBox match={m} key={i} />
+            </Link>
           );
         })}
       </div>

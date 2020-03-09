@@ -3,6 +3,7 @@ import '../assets/css/Header.css';
 
 // COMPONENTES
 import Menu from './Menu';
+import SlideMenu from './SlideMenu'
 import LoginBtn from './LoginBtn'
 
 let user = false;
@@ -25,6 +26,7 @@ function Header(props){
       <div className="container box">
         <h3 className="title">{props.title}</h3>
       </div>
+      <SlideMenu />
     </div>
     
   )

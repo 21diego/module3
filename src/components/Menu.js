@@ -7,6 +7,7 @@ import pelota from '../assets/img/nysl_logo.png'
 function Menu(props){
   
   return (
+    
     <div className="Menu col-4">
       <div className="box-contain">
       <i className="fas fa-bars"></i>

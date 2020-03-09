@@ -1,13 +1,15 @@
 import React from 'react';
 import './assets/css/App.css';
 
+
 /*COMPONENTES*/
-import Home from './components/Home'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      
+      <Header title="Upcoming Events"/>
       
     </div>
     
