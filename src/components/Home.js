@@ -1,40 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import '../assets/css/Home.css';
-import {db} from '../firebase';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
-// COMPONENTES
-
-import GameBox from './GameBox';
 
 function Home(){
-  const [schedule, setSchedule] = useState([])
-  
-    useEffect(() =>{ //Database bringer
-      async function loadDatabase(){
-        await db.ref('schedule/').once('value')
-        .then(function(response){
-            setSchedule(response.val())
-        })
-      }
-      loadDatabase();
-      
-    },[])
-  return (
-    <div>
-      
-      <div id="matches">
-        {schedule.map((m,i )=> {
-          return (
-            <Link to={'/game/' + m.gameId} key={m.gameId}>
-              <GameBox match={m} key={i} />
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-  )
-
+    return (
+        <div>
+            <ul>
+                <li>match 1</li>
+                <li>match 2</li>
+                <li>match 3</li>
+            </ul>
+        </div>
+    )
 }
 
 export default Home;

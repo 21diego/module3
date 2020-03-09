@@ -4,7 +4,7 @@ import pelota from '../assets/img/nysl_logo.png'
 import $ from 'jquery';
 
 
-function Menu(props){
+function Menu(){
   $(document).ready(function () {
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
@@ -13,7 +13,12 @@ function Menu(props){
         $('.Menu').toggleClass('box-contain-open');
         $('#title').toggleClass('col-8');
         $('#title').toggleClass('align-self-center');
+        $('.overlay').addClass('active');
     });
+    $('.overlay').on('click', function () {
+      $('#sidebar').removeClass('active');
+      $('.overlay').removeClass('active');
+  });
   });
   
   return (

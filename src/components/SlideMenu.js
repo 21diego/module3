@@ -1,11 +1,11 @@
 import React from 'react';
 import '../assets/css/Menu.css';
-import  '../assets/css/SlideMenu.css'
-import $ from 'jquery';
+import  '../assets/css/SlideMenu.css';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 import Home from './Home';
 import GameDetail from './GameDetail';
+import Schedule from './Schedule';
 
 
 
@@ -20,10 +20,10 @@ function SlideMenu(){
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/schedule">Schedule</Link>
           </li>
           <li>
-            <Link to="/topics">Topics</Link>
+            <Link to="#">Topics</Link>
           </li>
         </ul>
       </div>
@@ -32,7 +32,7 @@ function SlideMenu(){
         <Switch>
           <Route path="/game/:id" children={<GameDetail />}>
           </Route>
-          <Route path="/topics">
+          <Route path="/schedule" component={Schedule}>
             
           </Route>
           <Route path="/">
