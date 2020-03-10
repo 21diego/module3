@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/css/Header.css';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // COMPONENTES
 import Menu from './Menu';
@@ -18,7 +19,9 @@ function Header(props){
   }
   return (
     <div className="Header">
+      <Router>
       <div className="row d-flex align-items-center">
+        
         <Menu/>
         <div id="title" className="col-4"><h2>NYSL</h2></div>
         {element}
@@ -27,6 +30,7 @@ function Header(props){
         <h3 className="title">{props.title}</h3>
       </div>
       <SlideMenu />
+      </Router>
     </div>
     
   )

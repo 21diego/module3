@@ -4,7 +4,6 @@ import {db} from '../firebase';
 import { Link } from 'react-router-dom';
 
 // COMPONENTES
-import Header from './Header';
 import GameBox from './GameBox';
 
 function Schedule(){

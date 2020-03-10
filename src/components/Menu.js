@@ -18,7 +18,10 @@ function Menu(){
     $('.overlay').on('click', function () {
       $('#sidebar').removeClass('active');
       $('.overlay').removeClass('active');
-  });
+    });
+    $('#sidebar li').on('click', function(){
+      $('#sidebar li').removeClass('active');
+    });
   });
   
   return (
