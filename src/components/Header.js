@@ -18,7 +18,7 @@ function Header(props){
     element = <LoginBtn/>
   }
   return (
-    <div className="Header">
+    <div className="Header m-0">
       
       <div className="row d-flex align-items-center p-0 m-0">
         
