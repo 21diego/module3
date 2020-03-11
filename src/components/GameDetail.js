@@ -29,7 +29,6 @@ function GameDetail(){
   },[])
   let srcMap = map.filter(m => m.name === match.location);
   let source = srcMap[0]? srcMap[0].link:null;
-  console.log(srcMap[0]);
   return (
     <div className="Game box">
       <div className="d-flex justify-content-around ">
