@@ -3,24 +3,51 @@
 }
 
 .box-contain {
-  height: 2em;
+  height: 2.5em;
   background-color: #2e7d32;
   padding: 0.1em;
-  border-top-right-radius: 1em;
-  border-bottom-right-radius: 1em;
+  transition: all 0.3s;
 }
-
+.box-contain-open {
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  transition: all 0.3s;
+}
 p {
   margin: 0;
 }
 
-#pelotita {
-  width: 2.5em;
+.pelotita {
+  width: 3em;
   position: absolute;
-  right: 0;
+  left: 20vw;
   top: -5px;
+  z-index: 999;
+  transition: all 0.3s;
+}
+.pelotita-open{
+  left: 65vw;
+  -webkit-animation: spin  0,3s linear;
+  -moz-animation: spin  0.3s linear;
+  animation: spin  0.3s linear;
+  transition: all 0.3s;
 }
 
 .fa-bars {
   color: white;
 }
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+

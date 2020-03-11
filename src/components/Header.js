@@ -6,6 +6,7 @@ import Menu from './Menu';
 import SlideMenu from './SlideMenu'
 import LoginBtn from './LoginBtn'
 
+
 let user = false;
 
 function Header(props){
@@ -18,15 +19,15 @@ function Header(props){
   }
   return (
     <div className="Header">
-      <div className="row d-flex align-items-center">
-        <Menu stateUser={user}/>
-        <div className="col-4"><h2>NYSL</h2></div>
+      
+      <div className="row d-flex align-items-center p-0 m-0">
+        
+        <Menu/>
+        <div id="title" className="col-4"><h2>NYSL</h2></div>
         {element}
       </div>
-      <div className="container box">
-        <h3 className="title">{props.title}</h3>
-      </div>
       <SlideMenu />
+      
     </div>
     
   )
