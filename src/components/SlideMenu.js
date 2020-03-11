@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/css/Menu.css';
-import {BrowserRouter as Router, Route, Link, Switch, useParams } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 import Home from './Home';
 import GameDetail from './GameDetail';
