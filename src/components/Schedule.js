@@ -24,6 +24,7 @@ async function landscape (matchInfo) {
         <p class="team">vs</p>
         <h3 class="team">${matchInfo.team2}</h3>
       </div>
+      <div class="time">Day: ${matchInfo.date}</div>
       <div class="time">Time: ${matchInfo.time.replace(/_/gi," ")}</div>
       <div class="location">Stadium: ${matchInfo.location.replace(/_/gi," ")}</div>
       <div class="location">Address: ${srcMap[0]? srcMap[0].location.replace(/_/gi," "):null}</div>

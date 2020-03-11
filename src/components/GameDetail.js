@@ -36,9 +36,10 @@ function GameDetail(){
         <p className="team">vs</p>
         <h3 className="team">{match.team2}</h3>
       </div>
-      <div className="time">Time: {match.time}</div>
-      <div className="location">Stadium: {match.location}</div>
-      <div className="location">address: {srcMap[0]? srcMap[0].location:null}</div>
+      <div className="time">Date: {match.date}</div>
+      <div className="time">Time: {match.time ? match.time.replace(/_/gi," "):null}</div>
+      <div className="location">Stadium: {match.location ? match.location.replace(/_/gi," "):null}</div>
+      <div className="location">Address: {srcMap[0]? srcMap[0].location.replace(/_/gi," "):null}</div>
       <iframe title="myFrame" className="map" src={source}></iframe>
     </div>
   )

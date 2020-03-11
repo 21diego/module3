@@ -9,8 +9,9 @@ function GameBox(props){
         <p className="team">vs</p>
         <h3 className="team">{props.match.team2}</h3>
       </div>
-      <div className="time">{props.match.time}</div>
-      <div className="location">{props.match.location}</div>
+      <div className="team">{props.match.date}</div>
+      <div className="time">{props.match.time.replace(/_/gi," ")}</div>
+      <div className="location">{props.match.location.replace(/_/gi," ")}</div>
     </div>
   )
 }

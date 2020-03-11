@@ -4,9 +4,9 @@ import {Link, withRouter,useHistory} from 'react-router-dom';
 import * as firebase from 'firebase/app';
 
 
-// import SignUpView from "./signup";
-
 let history = '';
+
+
 const handleSignUp = async event => {
 	event.preventDefault();
 	const { email, password } = event.target.elements;
@@ -28,12 +28,8 @@ function Register(){
       <form className="m-0 container" onSubmit={handleSignUp}>
 				<div className="container">
           <div className="form-group m-0">
-    			  <label htmlFor="firstname"></label>
-    			  <input type="text" className="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter your first name" />
-  			  </div>
-          <div className="form-group m-0">
-    			  <label htmlFor="lastname"></label>
-    			  <input type="text" className="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Enter your last name" />
+    			  <label htmlFor="name"></label>
+    			  <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your first name" />
   			  </div>
 					<div className="form-group m-0">
     			  <label htmlFor="email"></label>
