@@ -27,3 +27,8 @@ h2{
   margin-bottom: 1em;
 }
 
+.box-contain-reverse {
+  height: 2.5em;
+  background-color: #2e7d32;
+  padding: 0.1em;
+}

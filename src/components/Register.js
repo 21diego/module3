@@ -3,17 +3,31 @@ import '../assets/css/Register.css';
 import {Link, withRouter,useHistory} from 'react-router-dom';
 import * as firebase from 'firebase/app';
 
-
 let history = '';
+// async function createUserDB(id,name,email,photo){
+// 	let user = {
+// 		'name': name,
+// 		'email': email,
+// 		'photoURL':photo
+// 	}
 
+// }
 
 const handleSignUp = async event => {
 	event.preventDefault();
-	const { email, password } = event.target.elements;
+	const {name, email, password } = event.target.elements;
 	try {
 		await firebase
 			.auth()
-			.createUserWithEmailAndPassword(email.value, password.value);
+			.createUserWithEmailAndPassword(email.value, password.value)
+			.then(data =>{
+				data.user.updateProfile({
+					displayName: name.value,
+					photoURL: "https://i.ibb.co/f08MyQK/user.png"
+					});
+				// createUserDB(data.user.uid,name.value, email.value,data.user.photoURL);
+
+			})
 		history.push("/");
 	} catch (error) {
 		alert(error);
@@ -29,7 +43,7 @@ function Register(){
 				<div className="container">
           <div className="form-group m-0">
     			  <label htmlFor="name"></label>
-    			  <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your first name" />
+    			  <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your full name" />
   			  </div>
 					<div className="form-group m-0">
     			  <label htmlFor="email"></label>
@@ -50,4 +64,5 @@ function Register(){
   )
 }
 
-export default withRouter(Register);
+
+export default Register;

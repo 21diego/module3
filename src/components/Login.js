@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/css/Login.css';
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
@@ -22,15 +22,29 @@ function createUser(user){
 	window.localStorage.setItem('user',JSON.stringify(userOut));
 }
 
-function signIn(){
-	console.log(document.querySelector('#login #email'));
-}
+let history='';
+const handleSignIn = async event => {
+	event.preventDefault();
+	const { email, password } = event.target.elements;
+	try {
+		await firebase
+			.auth()
+			.signInWithEmailAndPassword(email.value, password.value)
+			.then(data => {
+				console.log(data.user)
+			})
+			history.push("/");
+	} catch (error) {
+		alert(error);
+	}
+};
 
 function exitUser(){
 	window.localStorage.removeItem('user');
 }
 
 function Login(props){
+	history = useHistory();
 	const { user, signOut, signInWithGoogle, signInWithFacebook, signInWithTwitter } = props;
 	if(user != null){createUser(user)}
 	else {exitUser()}
@@ -58,8 +72,8 @@ function Login(props){
 					</button>
 				</div>  
     	</div>
-			<div className="titles mt-3">... or ...</div>
-			<form id="login" className="m-0">
+			<div className="titles mt-3">... or use ...</div>
+			<form id="login" className="m-0" onSubmit={handleSignIn}>
 				<div className="container">
 					<div className="form-group m-0">
     			<label htmlFor="email"></label>
@@ -69,7 +83,7 @@ function Login(props){
     			<label htmlFor="password"></label>
     			<input type="password" className="form-control" id="password" name="pass" placeholder="Password" />
   			</div>
-  			<button onClick={signIn} type="submit" value="hola" name="hola" className="btn btn-primary mt-4">Log In</button>
+  			<button type="submit" value="hola" name="hola" className="btn btn-primary mt-4">Log In</button>
 				</div>
 				<div className="titles mt-3">You have not yet registered?</div>
   			<div className="container">

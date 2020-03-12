@@ -1,0 +1,8 @@
+.profile{
+  border: 2px solid black;
+}
+
+#avatar{
+  border-radius: 50%;
+  width: 50%;
+}

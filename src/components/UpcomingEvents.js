@@ -8,7 +8,6 @@ function Events(){
     var today = new Date();
     let date = (today.getMonth()+1)+'-'+("0" + today.getDate()).slice(-2);
     date = date.replace(/-/gi,"/")
-    console.log(date)
     const [schedule, setSchedule] = useState([])
 
     useEffect(() =>{ //Database bringer
