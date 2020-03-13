@@ -13,14 +13,6 @@ const providers = {
 	twitterProvider : new firebase.auth.TwitterAuthProvider()
 };
 
-function createUser(user){
-	let userOut = {
-		id:user.uid,
-		name:user.displayName,
-		photo:user.photoURL
-	}
-	window.localStorage.setItem('user',JSON.stringify(userOut));
-}
 
 let history='';
 const handleSignIn = async event => {
@@ -32,14 +24,9 @@ const handleSignIn = async event => {
 			.signInWithEmailAndPassword(email.value, password.value)
 			.then(data => {
 				console.log(data.user)
-			})
-			if(window.localStorage.getItem('user')){
-
-			}
-			else{
-				window.localStorage.setItem('user',true);
-			}
+			});
 			history.push("/");
+			window.location.reload();
 	} catch (error) {
 		alert(error);
 	}
@@ -49,8 +36,7 @@ const handleSignIn = async event => {
 function Login(props){
 	history = useHistory();
 	const { user, signOut, signInWithGoogle, signInWithFacebook, signInWithTwitter } = props;
-	if(user){window.localStorage.setItem('user',true);}
-	else {window.localStorage.setItem('user',false);}
+	
 	return (
 		<div className="container">
 			<div className="titles mt-3 mb-3">Please login with...</div>

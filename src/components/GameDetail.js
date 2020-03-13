@@ -32,7 +32,7 @@ function GameDetail(){
   let srcMap = map.filter(m => m.name === match.location);
   let source = srcMap[0]? srcMap[0].link:null;
   return (
-    match != undefined
+    match !== undefined
     ? <div className="Game box">
         <div className="d-flex justify-content-around ">
           <h3 className="team">{match.team1}</h3>

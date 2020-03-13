@@ -20,8 +20,10 @@ import Options from './Options';
 
 const firebaseAppAuth = firebase.auth();
 
+
+
+
 function SlideMenu(props){
-  console.log(props.user)
   let element = '';
   let log = null;
   if(props.user){
@@ -29,7 +31,7 @@ function SlideMenu(props){
     log = <div>
             <li className="row m-0 p-0">
               <i className="fas fa-sign-out-alt fa-2x col-3 text-center"></i>
-              <Link to='/' onClick={props.signOut} className="col-9 text-left">Log Out</Link>
+              <Link to='/login' onClick={props.signOut} className="col-9 text-left">Log Out</Link>
             </li>
           </div>
   }

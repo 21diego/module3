@@ -1,6 +1,5 @@
 import React from 'react';
 import '../assets/css/ProfileBox.css';
-import { Link } from 'react-router-dom';
 
 
 // COMPONENTES

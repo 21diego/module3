@@ -1,14 +1,24 @@
 import React from 'react';
 import './assets/css/App.css';
+import withFirebaseAuth from 'react-with-firebase-auth';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+
 
 
 /*COMPONENTES*/
 import Header from './components/Header'
-
-function App() {
-  if(window.localStorage.getItem('user')== false){
-    window.localStorage.setItem('user',null);
+const firebaseAppAuth = firebase.auth();
+ 
+function App(props) {
+  const {user} = props;
+  console.log(user)
+  if(user){
+    window.localStorage.setItem('user',true);
+    
   }
+	else {window.localStorage.setItem('user',false);}
+  
   return (
     <div className="App">
       <Header title="Upcoming Events"/>
@@ -17,5 +27,8 @@ function App() {
     );
   }
   
-  export default App;
+  export default withFirebaseAuth({
+    firebaseAppAuth,
+  })(App);
+  
   

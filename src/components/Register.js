@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/css/Register.css';
-import {Link, withRouter,useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import * as firebase from 'firebase/app';
 
 let history = '';
@@ -29,6 +29,7 @@ const handleSignUp = async event => {
 
 			})
 		history.push("/");
+		window.location.reload();
 	} catch (error) {
 		alert(error);
 	}

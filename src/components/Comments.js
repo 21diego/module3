@@ -39,7 +39,7 @@ function ExportQueExporta(props){
        
         return(
         <div>
-            {window.localStorage.getItem('user') == "true"?
+            {window.localStorage.getItem('user') === "true"?
             <> 
             <div>
                 <p className="text-danger">Comments!</p>
