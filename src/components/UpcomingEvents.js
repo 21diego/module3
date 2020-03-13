@@ -23,9 +23,7 @@ function Events(){
     schedule.length ? Upcoming = schedule.filter(e => (+ (e.date.replace("/",""))) > (+ (date.replace("/","")))) : console.log("asd")
     return(
         <div className="container-fluid">
-            <div className="box">
-			    <h3 className="title">Upcoming Events</h3>
-			</div>
+            
             {schedule.length
             ?   <div className="row">
                     <Link to={'/game/' + Upcoming[0].gameId} key={Upcoming[0].gameId} className="col-12">

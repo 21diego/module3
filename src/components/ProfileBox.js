@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 function ProfileBox(props){
   let user = props.user;
   return(
-    <div className="profile container">
+    <div className="profile container mt-3">
       
         <img id="avatar" className="" src={user.photoURL} alt="user avatar"></img>
         <p id="nameid" className="">{user.displayName}</p>
       
       
-      <div className="row"> 
+      {/* <div className="row"> 
         {user.club ? 
           <div>
             <p className="col-8">{user.club.name}</p>
@@ -29,7 +29,7 @@ function ProfileBox(props){
       </div>
       <div>
 
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -1,11 +1,14 @@
 .btnf {
-  background-color: #3b5998;
+  background-color: #27BC8F;
 }
 .btnt{
   background-color: #00aced;
+  width: 25vw;
+  margin-left: 10vw;
 }
 .btng{
   background-color: #c32f10;
+  width: 25vw;
 }
 #buttons .fab{
   color: white;
@@ -16,7 +19,8 @@
   background-color: rgba(0, 0, 0, 0.7);
   
 }
-
-form .btn{
+.btn-green{
   width: 100%;
+  color: white;
+  background-color: #27BC8F;
 }

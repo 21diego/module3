@@ -1,8 +1,15 @@
 .profile{
-  border: 2px solid black;
+  background-color: #3f9b44;
+  padding: 1em 0;
 }
 
 #avatar{
   border-radius: 50%;
   width: 50%;
+}
+
+@media only screen and (orientation: landscape){
+  .profile{
+    width: 50%;
+  }
 }

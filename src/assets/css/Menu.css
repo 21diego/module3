@@ -51,3 +51,14 @@ p {
   to {transform:rotate(360deg);}
 }
 
+@media only screen and (orientation: landscape){
+  .Menu{
+    padding-right: 15vh !important;
+  }
+  .box-contain-open{
+    width: 90% !important;
+  }
+  .pelotita-open{
+    left: 75vw;
+  }
+}

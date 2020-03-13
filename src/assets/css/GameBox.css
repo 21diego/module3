@@ -6,6 +6,7 @@
 
 .team{
   color: white;
+  z-index: 800;
 }
 
 .time, .location {

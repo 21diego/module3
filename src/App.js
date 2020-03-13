@@ -6,6 +6,9 @@ import './assets/css/App.css';
 import Header from './components/Header'
 
 function App() {
+  if(window.localStorage.getItem('user')== false){
+    window.localStorage.setItem('user',null);
+  }
   return (
     <div className="App">
       <Header title="Upcoming Events"/>

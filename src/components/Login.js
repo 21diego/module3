@@ -33,24 +33,26 @@ const handleSignIn = async event => {
 			.then(data => {
 				console.log(data.user)
 			})
+			if(window.localStorage.getItem('user')){
+
+			}
+			else{
+				window.localStorage.setItem('user',true);
+			}
 			history.push("/");
 	} catch (error) {
 		alert(error);
 	}
 };
 
-function exitUser(){
-	window.localStorage.removeItem('user');
-}
 
 function Login(props){
 	history = useHistory();
 	const { user, signOut, signInWithGoogle, signInWithFacebook, signInWithTwitter } = props;
-	if(user != null){createUser(user)}
-	else {exitUser()}
+	if(user){window.localStorage.setItem('user',true);}
+	else {window.localStorage.setItem('user',false);}
 	return (
 		<div className="container">
-			{user ? <p>hola {user.displayName}</p> : <p>Porfavor ingresa</p>}
 			<div className="titles mt-3 mb-3">Please login with...</div>
 			<div id="buttons" className="row p-0 m-0">
 				{/* <div className="col-4">
@@ -83,14 +85,13 @@ function Login(props){
     			<label htmlFor="password"></label>
     			<input type="password" className="form-control" id="password" name="pass" placeholder="Password" />
   			</div>
-  			<button type="submit" value="hola" name="hola" className="btn btn-primary mt-4">Log In</button>
+  			<button type="submit" value="hola" name="hola" className="btn btn-green mt-4">Log In</button>
 				</div>
 				<div className="titles mt-3">You have not yet registered?</div>
   			<div className="container">
-					<Link to='/register'><button type="submit" className="btn btn-primary mt-4">Register</button></Link>
+					<Link to='/register'><button type="submit" className="btn btn-green mt-4">Register</button></Link>
 				</div>
 			</form>
-			<button onClick={signOut} className="btn btn-primary mt-4">signOut</button>
 		 </div>
 	)
 
