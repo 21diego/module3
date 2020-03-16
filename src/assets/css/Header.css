@@ -20,6 +20,7 @@ h2{
 
 .box {
   background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   padding: 1em;
   padding-top: 0.5em;
   border-bottom-right-radius: 2em;

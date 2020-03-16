@@ -16,8 +16,6 @@ function comment(matchId){
     }
 
     db.ref().update(update)
-
-    //input.value = ""
 }
 
 function nada(){
@@ -41,13 +39,11 @@ function ExportQueExporta(props){
         <div>
             {window.localStorage.getItem('user') === "true"?
             <> 
-            <div>
-                <p className="text-danger">Comments!</p>
+            <div id="chat">
                 {comments.length ?
                 comments.map((comment, i) =>{
                     return(
                             <div key={i}>
-                                {console.log(comments)}
                                 <p className="text-danger">{comment.comment}</p>
                                 <p className="text-danger">{comment.date}</p>
                             </div>

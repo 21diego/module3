@@ -4,14 +4,14 @@ import UpcomingEvents from './UpcomingEvents'
 
 
 
-function Home(){
+function Home(props){
 
 	return (
 		<div>
 			<div className="box">
 			    <h3 className="title">Upcoming Events</h3>
 			</div>
-			<UpcomingEvents />
+			<UpcomingEvents matches={props.matches} teams={props.teams}/>
 		</div>
 	)
 }
