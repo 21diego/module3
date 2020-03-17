@@ -16,7 +16,7 @@ import Schedule from './Schedule';
 import Login from './Login';
 import Register from './Register';
 import Privacy from './Privacy';
-// import Contact from './Contact';
+import Contact from './Contact';
 import ProfileBox from './ProfileBox';
 import Options from './Options';
 import Stadiums from './Stadiums';
@@ -91,10 +91,10 @@ function SlideMenu(props){
             <i className="fas fa-chart-pie fa-2x col-3 text-center"></i>
             <Link to="/stats" className="col-9 text-left click">Stats</Link>
           </li>
-          {/* <li className="row m-0 p-0">
+          <li className="row m-0 p-0">
             <i className="far fa-comments fa-2x col-3 text-center"></i>
             <Link to="/contact" className="col-9 text-left click">Contact Me</Link>
-          </li> */}
+          </li>
           <li className="row m-0 p-0">
             <i className="far fa-sticky-note fa-2x col-3 text-center"></i>
             <Link to="/privacy" className="col-9 text-left click">Privacy Policy</Link>
@@ -112,7 +112,7 @@ function SlideMenu(props){
           <Route path="/stadiums" render={() => <Stadiums maps={maps}/>}></Route>
           <Route path="/stats" component={Stats}></Route>
           <Route path="/register" component={Register}></Route>
-          {/* <Route path="/register" component={Contact}></Route> */}
+          <Route path="/contact" component={Contact}></Route>
           <Route path="/privacy" component={Privacy}></Route>
           <Route path="/" exact render={() => <Home matches={matches} teams={teams}/>}></Route>
         </Switch>

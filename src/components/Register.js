@@ -56,11 +56,11 @@ function Register(){
     			  <label htmlFor="password"></label>
     			  <input type="password" className="form-control" id="password" placeholder="Write a password" />
   			  </div>
-          <button type="submit" className="btn btn-primary mt-4">Register</button>
+          <button type="submit" className="btn btn-green mt-4">Register</button>
         </div>
         <div className="titles mt-3">Do you have an account?</div>
         <div className="container">
-          <Link to='/login'><button type="submit" className="btn btn-primary mt-4">Login</button></Link>
+          <Link to='/login'><button type="submit" className="btn btn-green mt-4">Login</button></Link>
         </div>
 			</form>
     </div>
