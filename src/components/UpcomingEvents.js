@@ -1,8 +1,11 @@
 import React from 'react';
-import {db} from '../firebase';
 import { Link } from 'react-router-dom';
 
 import GameBox from './GameBox';
+
+function nada(){
+    return null
+}
 
 function Events(props){
     var today = new Date();
@@ -10,7 +13,7 @@ function Events(props){
     date = date.replace(/-/gi,"/")
 
     let Upcoming
-    props.matches.length ? Upcoming = props.matches.filter(e => (+ (e.date.replace("/",""))) > (+ (date.replace("/","")))) : console.log("asd")
+    props.matches.length ? Upcoming = props.matches.filter(e => (+ (e.date.replace("/",""))) > (+ (date.replace("/","")))) : nada();
     return(
         <div className="container-fluid">
             

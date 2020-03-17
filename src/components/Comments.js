@@ -8,9 +8,8 @@ function comment(matchId){
     let newKey = db.ref(`forum/${parseInt(matchId)}/${parseInt(matchId)}/`).push().key
     let update = {}
     update[`forum/${parseInt(matchId)}/${parseInt(matchId)}/${newKey}`] = {
-        /*uid: this.user.uid,
-        username: this.user.displayName,
-        email: this.user.email,*/
+        username: localStorage.getItem("username"),
+        email: localStorage.getItem("email"),
         comment: input.value,
         date: date
     }
@@ -21,7 +20,6 @@ function comment(matchId){
 function nada(){
     return null
 }
-
 function ExportQueExporta(props){
 
     const [comments, setComments] = useState([])
@@ -59,7 +57,7 @@ function ExportQueExporta(props){
                 </form>
             </div>
             </>
-            : console.log("logueate cappo")}
+            : nada()}
         </div>
     )
 }

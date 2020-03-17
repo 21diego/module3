@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import {db} from '../firebase';
+import React from 'react';
 
 function Stadiums(props){
   return(

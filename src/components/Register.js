@@ -2,16 +2,19 @@ import React from 'react';
 import '../assets/css/Register.css';
 import {Link, useHistory} from 'react-router-dom';
 import * as firebase from 'firebase/app';
+import {db} from "./../firebase"
 
 let history = '';
-// async function createUserDB(id,name,email,photo){
-// 	let user = {
-// 		'name': name,
-// 		'email': email,
-// 		'photoURL':photo
-// 	}
-
-// }
+async function createUserDB(name,email,photo){
+	let newKey = db.ref(`users/`).push().key
+	let user = {}
+	user[`users/${newKey}`] = {
+ 		'name': name,
+ 		'email': email,
+ 		'photoURL':photo
+	 }
+	db.ref().update(user)
+ }
 
 const handleSignUp = async event => {
 	event.preventDefault();
@@ -25,8 +28,7 @@ const handleSignUp = async event => {
 					displayName: name.value,
 					photoURL: "https://i.ibb.co/f08MyQK/user.png"
 					});
-				// createUserDB(data.user.uid,name.value, email.value,data.user.photoURL);
-
+				createUserDB(name.value, email.value,data.user.photoURL);
 			})
 		history.push("/");
 		window.location.reload();

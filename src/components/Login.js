@@ -2,13 +2,14 @@ import React from 'react';
 import '../assets/css/Login.css';
 import {Link,useHistory} from 'react-router-dom';
 import withFirebaseAuth from 'react-with-firebase-auth';
+import {db} from '../firebase';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 
 const firebaseAppAuth = firebase.auth();
 
 const providers = {
-    googleProvider : new firebase.auth.GoogleAuthProvider(),
+  googleProvider : new firebase.auth.GoogleAuthProvider(),
 	facebookProvider : new firebase.auth.FacebookAuthProvider(),
 	twitterProvider : new firebase.auth.TwitterAuthProvider()
 };
@@ -23,7 +24,8 @@ const handleSignIn = async event => {
 			.auth()
 			.signInWithEmailAndPassword(email.value, password.value)
 			.then(data => {
-				console.log(data.user)
+				window.localStorage.setItem('username',data.user.displayName);
+				window.localStorage.setItem('email',data.user.email);
 			});
 			history.push("/");
 			window.location.reload();
@@ -32,10 +34,49 @@ const handleSignIn = async event => {
 	}
 };
 
+function verifyUser(user, usersDB){
+	let ok = false;
+	for(let u in usersDB) {
+		if(usersDB[u].email === user.email){ok = true}
+	}
+	return ok;
+}
 
+async function createUserDB(userData){
+		let newKey = db.ref(`users/`).push().key
+		let user = {}
+		user[`users/${newKey}`] = {
+ 			'name': userData.displayName,
+ 			'email': userData.email,
+ 			'photoURL':userData.photoURL
+	 	}
+		db.ref().update(user)
+	
+}
+	
 function Login(props){
+	
 	history = useHistory();
-	const { user, signOut, signInWithGoogle, signInWithFacebook, signInWithTwitter } = props;
+	const {signInWithGoogle, signInWithTwitter } = props;
+	
+	function loginGoogle(){
+		signInWithGoogle().then((data)=>{
+			if(!verifyUser(data.user, props.users)){createUserDB(data.user);}
+			window.localStorage.setItem('username',data.user.displayName);
+			window.localStorage.setItem('email',data.user.email);
+			history.push("/");
+			window.location.reload();
+		})
+	}
+	function loginTwitter(){
+		signInWithTwitter().then((data)=>{
+			window.localStorage.setItem('username',data.user.displayName);
+			window.localStorage.setItem('email',data.user.email);
+			history.push("/");
+			window.location.reload();
+		})
+	}
+
 	
 	return (
 		<div className="container">
@@ -48,13 +89,13 @@ function Login(props){
 					</button>
 				</div> */}
 				<div className="col-6">
-					<button onClick={signInWithTwitter} className="btnt btn btn-lg btn-block kpx_btn-twitter" data-toggle="tooltip" data-placement="top" title="Twitter">
+					<button onClick={loginTwitter} className="btnt btn btn-lg btn-block kpx_btn-twitter" data-toggle="tooltip" data-placement="top" title="Twitter">
 						<i className="fab fa-twitter fa-2x"></i>
 						<span className="hidden-xs"></span>
 					</button>
 				</div>  
 				<div className="col-6">
-					<button onClick={signInWithGoogle} className="btng btn btn-lg btn-block kpx_btn-google-plus" data-toggle="tooltip" data-placement="top" title="Google Plus">
+					<button onClick={loginGoogle} className="btng btn btn-lg btn-block kpx_btn-google-plus" data-toggle="tooltip" data-placement="top" title="Google Plus">
 						<i className="fab fa-google fa-2x"></i>
 						<span className="hidden-xs"></span>
 					</button>

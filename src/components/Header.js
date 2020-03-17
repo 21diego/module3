@@ -15,7 +15,7 @@ function Header(props){
         
         <Menu/>
         <div id="title" className="col-4"><h2>NYSL</h2></div>
-        <div className="col-4 box-contain-reverse"></div>
+        <div className="col-4"></div>
         
       </div>
       <SlideMenu />

@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 function Menu(){
   $(document).ready(function () {
-    $('#sidebarCollapse').on('click', function () {
+    $('#sidebarCollapse, .click').on('click', function () {
         $('#sidebar').toggleClass('active');
         $('#pelota').toggleClass('pelotita-open');
         $('.Menu').toggleClass('col-9');
@@ -16,20 +16,17 @@ function Menu(){
         $('#title').toggleClass('align-self-center');
         $('.overlay').addClass('active');
     });
-    $('.overlay').on('click', function () {
-      $('#sidebar').removeClass('active');
-      $('.overlay').removeClass('active');
-    });
     $('#sidebar li').on('click', function(){
       $('#sidebar li').removeClass('active');
     });
+    
   });
   
   return (
     
     <div className="Menu col-4 pl-0">
-      <div className="box-contain w-80">
-        <button type="button" className="btn" id="sidebarCollapse"><i className="fas fa-bars"></i></button>
+      <div className="box-contain w-80 " id="sidebarCollapse">
+        <button type="button" className="btn" ><i className="fas fa-bars"></i></button>
       </div>
       <img id="pelota" className="pelotita" src={pelota} alt="pelotita"></img>
     </div>

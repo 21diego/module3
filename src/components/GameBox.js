@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import '../assets/css/GameBox.css';
 
 function getTeams(teams, team1, team2){
@@ -13,7 +13,7 @@ function getTeams(teams, team1, team2){
         <div className="d-flex justify-content-around align-items-center">
           <div>
             <img id="shield" src={teamsAux[0].shield} alt={teamsAux[0].name}></img>
-            <div className="full">{teamsAux[0].name}</div>
+            <div className="full">{teamsAux[0].name.replace(/_/gi," ")}</div>
             <div className="small">{teamsAux[0].acronym}</div>
           </div>
           <div>
@@ -21,7 +21,7 @@ function getTeams(teams, team1, team2){
           </div>
           <div>
             <img id="shield" src={teamsAux[1].shield} alt={teamsAux[0].name}></img>
-            <div className="full">{teamsAux[1].name}</div>
+            <div className="full">{teamsAux[1].name.replace(/_/gi," ")}</div>
             <div className="small">{teamsAux[1].acronym}</div>
           </div>
           

@@ -37,6 +37,9 @@ p {
 .fa-bars {
   color: white;
 }
+.btn:focus{
+  box-shadow: none;
+}
 
 @-moz-keyframes spin {
   from { -moz-transform: rotate(0deg); }

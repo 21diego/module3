@@ -12,7 +12,6 @@ const firebaseAppAuth = firebase.auth();
  
 function App(props) {
   const {user} = props;
-  console.log(user)
   if(user){
     window.localStorage.setItem('user',true);
     
