@@ -4,11 +4,6 @@
   margin-bottom: 1em;
 }
 
-.team{
-  color: white;
-  z-index: 800;
-}
-
 .time, .location {
   color: white;
   font-size: 1em;

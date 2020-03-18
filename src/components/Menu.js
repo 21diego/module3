@@ -9,12 +9,11 @@ function Menu(){
     $('#sidebarCollapse, .click').on('click', function () {
         $('#sidebar').toggleClass('active');
         $('#pelota').toggleClass('pelotita-open');
-        $('.Menu').toggleClass('col-9');
-        $('.Menu').toggleClass('box-contain-open');
+        $('.box-contain').toggleClass('box-contain-open');
         $('.Menu').toggleClass('position-fixed');
         $('#title').toggleClass('col-8');
         $('#title').toggleClass('align-self-center');
-        $('.overlay').addClass('active');
+        $('#overlay').toggleClass('over-active');
     });
     $('#sidebar li').on('click', function(){
       $('#sidebar li').removeClass('active');
@@ -24,8 +23,8 @@ function Menu(){
   
   return (
     
-    <div className="Menu col-4 pl-0">
-      <div className="box-contain w-80 " id="sidebarCollapse">
+    <div className="Menu pl-0">
+      <div className="box-contain" id="sidebarCollapse">
         <button type="button" className="btn" ><i className="fas fa-bars"></i></button>
       </div>
       <img id="pelota" className="pelotita" src={pelota} alt="pelotita"></img>

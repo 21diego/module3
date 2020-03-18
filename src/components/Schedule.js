@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 // COMPONENTES
 import GameBox from './GameBox';
+import GameDetail from './GameDetail';
 import Comments from './Comments';
 
 window.addEventListener("orientationchange", function() {
@@ -72,7 +73,7 @@ function Schedule(props){
                           <Comments id={(M.gameId)}/>
                         </div>
                       </div>
-                    :  <p className="text-danger">Please click a game and it will charge here!</p>
+                    :  <p className="box text-danger">Please click a game and it will charge here!</p>
                   }
                   </div>
                 </>

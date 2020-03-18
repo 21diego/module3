@@ -26,7 +26,10 @@ function App(props) {
   
   return (
     <div className="App">
+      <div className="back"></div>
+      <div className="gradient"></div>
       <Header title="Upcoming Events"/>
+      
     </div>
     
     );

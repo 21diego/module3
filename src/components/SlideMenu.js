@@ -71,7 +71,7 @@ function SlideMenu(props){
   }
   return (
     <div>
-    
+      <div id="overlay"></div>
       <div id="sidebar" className="active position-fixed">
         {element}
         <ul className="list-unstyled components mt-3">

@@ -1,19 +1,26 @@
 .App {
   text-align: center;
-  background-image: url('../img/back_grass.jpg');
-  min-height: 100vh;
-  background-attachment: fixed;
 }
 a {
   text-decoration: none;
 }
-/* .gradient{
-  position: absolute;
-  background-image: linear-gradient(180deg, #27F33E 0%, #218710 10%, #27F33E 20%, #218710 30%, #27F33E 40%, #218710 50%,
-                                            #27F33E 60%, #218710 70%, #27F33E 80%, #218710 90%, #27F33E 98%);
-  opacity: 0.55;
-  min-width: 100vw;
-  min-height: 100vh;
+.back {
+  position: fixed;
   top: 0;
-  right: 0;
-} */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/back_grass.jpg');
+  opacity: 0.65;
+  z-index: -2;
+}
+.gradient{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(to right, rgba(4,88,54,1) 0%, rgba(63,130,8,1) 12%, rgba(4,88,54,1) 25%, rgba(63,130,8,1) 38%, rgba(4,88,54,1) 50%, rgba(63,130,8,1) 62%, rgba(4,88,54,1) 75%, rgba(63,130,8,1) 89%, rgba(4,88,54,1) 100%); */
+  background: linear-gradient(to right, rgba(0,77,47,1) 0%, rgba(100,217,11,1) 12%, rgba(2,79,49,1) 25%, rgba(90,204,2,1) 38%, rgba(1,77,48,1) 50%, rgba(86,191,6,1) 62%, rgba(1,66,41,1) 75%, rgba(82,186,2,1) 89%, rgba(0,77,47,1) 100%);
+  z-index: -3;
+}

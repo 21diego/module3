@@ -1,15 +1,18 @@
 .Menu{
-  position: relative;
+  position: fixed;
+  top: 4vh;
+  z-index: 200;
 }
 
 .box-contain {
   height: 2.5em;
+  width: 25vw;
   background-color: #2e7d32;
   padding: 0.1em;
   transition: all 0.3s;
 }
 .box-contain-open {
-  width: 100%;
+  width: 70vw;
   position: absolute;
   z-index: 999;
   transition: all 0.3s;
@@ -27,7 +30,7 @@ p {
   transition: all 0.3s;
 }
 .pelotita-open{
-  left: 65vw;
+  left: 62vw;
   -webkit-animation: spin  0,3s linear;
   -moz-animation: spin  0.3s linear;
   animation: spin  0.3s linear;
@@ -59,9 +62,9 @@ p {
     padding-right: 15vh !important;
   }
   .box-contain-open{
-    width: 90% !important;
+    width: 60vw;
   }
   .pelotita-open{
-    left: 75vw;
+    left: 55vw;
   }
 }

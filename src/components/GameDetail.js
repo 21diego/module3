@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/css/GameBox.css';
+import '../assets/css/GameDetail.css';
 import { useParams} from 'react-router-dom';
 
 import Comments from './Comments'
@@ -48,7 +49,7 @@ function GameDetail(props){
         </div>
         <div className="location">Stadium: {match.location ? match.location.replace(/_/gi," "):null}</div>
         <div className="location">Address: {srcMap[0]? srcMap[0].location.replace(/_/gi," "):null}</div>
-        <iframe title="myFrame" className="map" src={source}></iframe>
+        <iframe title="myFrame" className="map" src={source} ></iframe>
         <div className="team">Chat</div>
         <div>
           <Comments id={(match.gameId)}/>

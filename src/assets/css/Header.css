@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
 
-.Header{
-  padding-top: 5%;
-  height: auto;
-  margin-bottom: 1em;
-}
 
 h2{
   font-family: 'Acme', sans-serif;
@@ -13,9 +8,44 @@ h2{
   color: white;
 }
 
+#header-box{
+  -webkit-box-shadow: -4px 6px 6px 6px rgba(0,0,0,0.51);
+  -moz-box-shadow: -4px 6px 6px 6px rgba(0,0,0,0.51);
+  box-shadow: -4px 6px 6px 6px rgba(0,0,0,0.51);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding-top: 20px !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 2vh !important;
+  z-index: 100;
+}
+
+.back-h {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 82px;
+  background-image: url('../img/back_grass.jpg');
+  opacity: 0.65;
+  z-index: -2;
+}
+.gradient-h{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 82px;
+  /* background: linear-gradient(to right, rgba(4,88,54,1) 0%, rgba(63,130,8,1) 12%, rgba(4,88,54,1) 25%, rgba(63,130,8,1) 38%, rgba(4,88,54,1) 50%, rgba(63,130,8,1) 62%, rgba(4,88,54,1) 75%, rgba(63,130,8,1) 89%, rgba(4,88,54,1) 100%); */
+  background: linear-gradient(to right, rgba(0,77,47,1) 0%, rgba(100,217,11,1) 12%, rgba(2,79,49,1) 25%, rgba(90,204,2,1) 38%, rgba(1,77,48,1) 50%, rgba(86,191,6,1) 62%, rgba(1,66,41,1) 75%, rgba(82,186,2,1) 89%, rgba(0,77,47,1) 100%);
+  z-index: -3;
+}
+
+
 .title {
   color: white;
- 
 }
 
 .box {
