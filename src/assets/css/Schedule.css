@@ -1,5 +1,14 @@
+.schedule{
+  height: 80vh;
+}
+
 #match{
   position: relative;
   right: 0;
   z-index: 0;
+}
+
+#matches{
+  overflow-y: scroll;
+  height: 70vh;
 }

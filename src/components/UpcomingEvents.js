@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../assets/css/Schedule.css'
 
 import GameBox from './GameBox';
 
@@ -15,7 +16,7 @@ function Events(props){
     let Upcoming
     props.matches.length ? Upcoming = props.matches.filter(e => (+ (e.date.replace("/",""))) > (+ (date.replace("/","")))) : nada();
     return(
-        <div className="container-fluid">
+        <div id="matches" className="container-fluid">
             
             {props.matches.length
             ?   <div className="row">

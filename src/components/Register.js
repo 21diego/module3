@@ -29,6 +29,7 @@ const handleSignUp = async event => {
 					photoURL: "https://i.ibb.co/f08MyQK/user.png"
 					});
 				createUserDB(name.value, email.value,data.user.photoURL);
+				alert("You have successfully registered!")
 			})
 		history.push("/");
 		window.location.reload();

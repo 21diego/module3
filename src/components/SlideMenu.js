@@ -16,6 +16,7 @@ import Schedule from './Schedule';
 import Login from './Login';
 import Register from './Register';
 import Privacy from './Privacy';
+import Terms from './Terms';
 import Contact from './Contact';
 import ProfileBox from './ProfileBox';
 import Options from './Options';
@@ -33,6 +34,7 @@ function SlideMenu(props){
   
   function signOut(){
     props.signOut().then(()=>{
+      alert("You successfully logged out!")
       window.location.reload();
     })
     
@@ -89,15 +91,19 @@ function SlideMenu(props){
           </li>
           <li className="row m-0 p-0">
             <i className="fas fa-chart-pie fa-2x col-3 text-center"></i>
-            <Link to="/stats" className="col-9 text-left click">Stats</Link>
+            <Link to="/stats" className="col-9 text-left click">Leaderboard</Link>
           </li>
           <li className="row m-0 p-0">
             <i className="far fa-comments fa-2x col-3 text-center"></i>
             <Link to="/contact" className="col-9 text-left click">Contact Me</Link>
           </li>
           <li className="row m-0 p-0">
-            <i className="far fa-sticky-note fa-2x col-3 text-center"></i>
+            <i className="fas fa-user-secret fa-2x col-3 text-center"></i>
             <Link to="/privacy" className="col-9 text-left click">Privacy Policy</Link>
+          </li>
+          <li className="row m-0 p-0">
+            <i className="far fa-sticky-note fa-2x col-3 text-center"></i>
+            <Link to="/terms" className="col-9 text-left click">Terms of Use</Link>
           </li>
           {log}
         </ul>
@@ -114,6 +120,7 @@ function SlideMenu(props){
           <Route path="/register" component={Register}></Route>
           <Route path="/contact" component={Contact}></Route>
           <Route path="/privacy" component={Privacy}></Route>
+          <Route path="/terms" component={Terms}></Route>
           <Route path="/" exact render={() => <Home matches={matches} teams={teams}/>}></Route>
         </Switch>
       </div>

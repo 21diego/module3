@@ -26,6 +26,7 @@ const handleSignIn = async event => {
 			.then(data => {
 				window.localStorage.setItem('username',data.user.displayName);
 				window.localStorage.setItem('email',data.user.email);
+				alert("You successfully logged in!")
 			});
 			history.push("/");
 			window.location.reload();
@@ -50,7 +51,7 @@ async function createUserDB(userData){
  			'email': userData.email,
  			'photoURL':userData.photoURL
 	 	}
-		db.ref().update(user)
+		db.ref().update(user);
 	
 }
 	
@@ -64,14 +65,17 @@ function Login(props){
 			if(!verifyUser(data.user, props.users)){createUserDB(data.user);}
 			window.localStorage.setItem('username',data.user.displayName);
 			window.localStorage.setItem('email',data.user.email);
+			alert("You successfully logged in!")
 			history.push("/");
 			window.location.reload();
 		})
 	}
 	function loginTwitter(){
 		signInWithTwitter().then((data)=>{
+			if(!verifyUser(data.user, props.users)){createUserDB(data.user);}
 			window.localStorage.setItem('username',data.user.displayName);
 			window.localStorage.setItem('email',data.user.email);
+			alert("You successfully logged in!")
 			history.push("/");
 			window.location.reload();
 		})

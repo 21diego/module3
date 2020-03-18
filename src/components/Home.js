@@ -7,8 +7,8 @@ import UpcomingEvents from './UpcomingEvents'
 function Home(props){
 
 	return (
-		<div>
-			<div className="box">
+		<div className="container-fluid">
+			<div className="home box">
 			    <h3 className="title">Upcoming Events</h3>
 			</div>
 			<UpcomingEvents matches={props.matches} teams={props.teams}/>

@@ -29,7 +29,7 @@ function send(event){
 function Contact () {
   history = useHistory();
   return (
-    <div>
+    <div className="container-fluid">
       <div className="box">CONTACT ME</div>
       <form className="m-0 container" onSubmit={send}>
 				<div className="container">
