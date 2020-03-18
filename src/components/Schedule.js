@@ -60,7 +60,7 @@ function Schedule(props){
         <div className="box">
 				  <h3 className="title">Schedule</h3>
 			  </div>
-        <div className="container-fluid">
+        <div className="container-fluid wrapper">
           {props.matches.length 
           ? window.matchMedia("(orientation: portrait)").matches
             ?  <div id="matches">
@@ -83,7 +83,7 @@ function Schedule(props){
                       );
                     })}
                   </div>
-                  <div id="match" className="col-7 sticky-top" key="col2">
+                  <div id="match" className="col-7" key="col2">
                   {M.date?
                     <div className="Game box">
                       {getTeams(props.teams, M.team1, M.team2)}
