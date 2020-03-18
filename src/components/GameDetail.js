@@ -41,7 +41,7 @@ function GameDetail(props){
   let source = srcMap[0]? srcMap[0].link:null;
   return (
     match !== undefined
-    ? <div className="Game box">
+    ? <div className="Game box container">
         {getTeams(props.teams, match.team1, match.team2)}
         <div className="d-flex justify-content-around">
           <div className="time">Date: {match.date}</div>

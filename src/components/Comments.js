@@ -3,19 +3,24 @@ import {db} from './../firebase'
 import '../assets/css/Comments.css'
 
 function comment(matchId){
-	var today = new Date();
-	let date = (today.getFullYear()+"-"+(today.getMonth()+1)+'-'+("0" + today.getDate()).slice(-2))
 	let input = document.getElementById('comment')
-	let newKey = db.ref(`forum/${parseInt(matchId)}/${parseInt(matchId)}/`).push().key
-	let update = {}
-	update[`forum/${parseInt(matchId)}/${parseInt(matchId)}/${newKey}`] = {
-		username: localStorage.getItem("username"),
-		email: localStorage.getItem("email"),
-		comment: input.value,
-		date: date
+	if(input.value === ""){
+		alert("Please write a comment!")
+	}
+	else {
+		var today = new Date();
+		let date = (today.getFullYear()+"-"+(today.getMonth()+1)+'-'+("0" + today.getDate()).slice(-2))
+		let newKey = db.ref(`forum/${parseInt(matchId)}/${parseInt(matchId)}/`).push().key
+		let update = {}
+		update[`forum/${parseInt(matchId)}/${parseInt(matchId)}/${newKey}`] = {
+			username: localStorage.getItem("username"),
+			email: localStorage.getItem("email"),
+			comment: input.value,
+			date: date
+		}
+		db.ref().update(update)
 	}
 	
-	db.ref().update(update)
 }
 
 function nada(){
@@ -61,7 +66,7 @@ function ExportQueExporta(props){
 									<textarea className="form-control" id="comment" rows="3" placeholder="Write a comment..." />
   							</div>
 								<div>
-									<button onClick={() => comment(parseInt(props.id)-1)} className="btn btn-green mt-4">Comment</button>
+									<button onClick={(event) => {event.preventDefault();comment(parseInt(props.id)-1)}} className="btn btn-green mt-4">Comment</button>
 								</div>
 							</div>
 						</form>
