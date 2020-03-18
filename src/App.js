@@ -14,9 +14,15 @@ function App(props) {
   const {user} = props;
   if(user){
     window.localStorage.setItem('user',true);
+    window.localStorage.setItem('email',user.email);
+    window.localStorage.setItem('username',user.displayName);
     
   }
-	else {window.localStorage.setItem('user',false);}
+  else {
+    window.localStorage.setItem('user',false);
+    window.localStorage.setItem('email',null);
+    window.localStorage.setItem('username',null);
+}
   
   return (
     <div className="App">

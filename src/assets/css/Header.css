@@ -24,6 +24,7 @@ h2{
   padding: 1em;
   padding-top: 0.5em;
   border-radius: 1em;
+  border: 2px solid rgb(84, 167, 64);
   /* border-bottom-right-radius: 2em;
   border-bottom-left-radius: 2em; */
   margin-bottom: 1em;
